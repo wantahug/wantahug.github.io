@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>一个小朋友的主页</title>
+        <meta charset="utf-8">
+        <meta name="description" content="她在这里安放了自己的家。">
+        <link rel="icon" href="images/smiling-loli.ico">
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="scripts/inside-pointer.js" defer></script>
+        <script src="scripts/jquery-3.6.1.js"></script>
+        <script>
+            $(document).ready(function(){
+
+                $("html").hide();
+                $("body").animate({left:'-=1500px'},0);
+                $("html").fadeIn(2000);
+                $("body").animate({left:'+=1500px'},2000);
+
+                $("h1").click(function(){
+                    $(this).fadeOut(1000);
+                    setTimeout(function(){$("h1").text("不要戳我呜呜QAQ")},1000);
+                    $(this).fadeIn(1000);
+                });
+                
+                let watchercnt=0;
+                $(".watcher").mouseenter(function(){
+                    if (watchercnt === 0){
+                        alert("滑这么下来干什么呢？");
+                        watchercnt=watchercnt+1;
+                    };
+                });
+
+                $("p.footer").click(function(){
+                    $(this).fadeOut(1000);
+                    setTimeout(function(){$("p.footer").text("这里真的什么都没有")},1000);
+                    $(this).fadeIn(1000);
+                });
+
+            });
+        </script>
+    </head>
+    <body style="position:relative;">
+
+        <nav>
+            <a href="index.html">主页</a>
+            <a href="sub-site/mywords.html">玩具盒</a>
+            <a href="sub-site/message.html">留言板</a>
+            <a href="sub-site/exchange-link.html">友情链接</a>
+        </nav>
+
+        <main>
+            <p style="font-size:small;text-indent: -2em;">可能需要一定时间加载图片。</p>
+            <h1>你好o(๑╹◡╹)ﾉ"~</h1>
+            <h2>这里安放着一个小朋友的碎碎念。</h2>
+        </main>
+
+        <footer>
+            <p class="footer">小朋友设想在这里要有一个区域，<br>
+                放好多好多的链接。<br>
+                当她做好这个区域，<br>
+                却发现她并不知道在这里能放些什么。</p>
+        </footer>
+        
+        <div style="height: 300em;"></div>
+        <div style="height: 150em;" class="watcher"></div>
+        <div id="inside">
+            <div style="height: 150em;"></div>
+            <a id="inside-entry">...?</a>
+        </div>
+
+    </body>
+</html>
